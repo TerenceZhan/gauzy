@@ -199,10 +199,10 @@ if (!isProd) {
 
 // we always want first to remove old generated files (one of them is not needed for current build)
 try {
-	unlinkSync(`./apps/gauzy/src/environments/environment.ts`);
+	unlinkSync(`./packages/core-angular/src/environments/environment.ts`);
 } catch {}
 try {
-	unlinkSync(`./apps/gauzy/src/environments/environment.prod.ts`);
+	unlinkSync(`./packages/core-angular/src/environments/environment.prod.ts`);
 } catch {}
 
 const envFileDest: string = isProd ? 'environment.prod.ts' : 'environment.ts';
@@ -211,7 +211,7 @@ const envFileDestOther: string = !isProd
 	: 'environment.ts';
 
 writeFile(
-	`./apps/gauzy/src/environments/${envFileDest}`,
+	`./packages/core-angular/src/environments/${envFileDest}`,
 	envFileContent,
 	function (err) {
 		if (err) {
@@ -223,7 +223,7 @@ writeFile(
 );
 
 writeFile(
-	`./apps/gauzy/src/environments/${envFileDestOther}`,
+	`./packages/core-angular/src/environments/${envFileDestOther}`,
 	'',
 	function (err) {
 		if (err) {

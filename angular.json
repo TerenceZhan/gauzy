@@ -1,5 +1,5 @@
 {
-	"$schema": "./apps/gauzy/node_modules/@angular/cli/lib/config/schema.json",
+	"$schema": "./packages/core-angular/node_modules/@angular/cli/lib/config/schema.json",
 	"cli": {
 		"warnings": {
 			"typescriptMismatch": false,
@@ -24,7 +24,7 @@
 			"prefix": "gauzy",
 			"architect": {
 				"build": {
-					"builder": "./apps/gauzy/node_modules/@angular-builders/custom-webpack:browser",
+					"builder": "./packages/core-angular/node_modules/@angular-builders/custom-webpack:browser",
 					"options": {
 						"aot": true,
 						"customWebpackConfig": {
@@ -36,7 +36,9 @@
 						"polyfills": "apps/gauzy/src/polyfills.ts",
 						"tsConfig": "apps/gauzy/tsconfig.app.json",
 						"stylePreprocessorOptions": {
-							"includePaths": ["apps/gauzy/src/app/@theme/styles"]
+							"includePaths": [
+								"packages/core-angular/src/@theme/styles"
+							]
 						},
 						"assets": [
 							"apps/gauzy/src/favicon.ico",
@@ -53,9 +55,9 @@
 							"node_modules/@fortawesome/fontawesome-free/css/all.css",
 							"node_modules/socicon/css/socicon.css",
 							"node_modules/nebular-icons/scss/nebular-icons.scss",
-							"apps/gauzy/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
+							"packages/core-angular/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
 							"node_modules/leaflet/dist/leaflet.css",
-							"apps/gauzy/src/app/@theme/styles/styles.scss"
+							"packages/core-angular/src/@theme/styles/styles.scss"
 						],
 						"scripts": [
 							"node_modules/echarts/dist/echarts.min.js",
@@ -67,8 +69,8 @@
 						"production": {
 							"fileReplacements": [
 								{
-									"replace": "apps/gauzy/src/environments/environment.ts",
-									"with": "apps/gauzy/src/environments/environment.prod.ts"
+									"replace": "packages/core-angular/src/environments/environment.ts",
+									"with": "packages/core-angular/src/environments/environment.prod.ts"
 								}
 							],
 							"optimization": true,
@@ -100,7 +102,7 @@
 					}
 				},
 				"serve": {
-					"builder": "./apps/gauzy/node_modules/@angular-builders/custom-webpack:dev-server",
+					"builder": "./packages/core-angular/node_modules/@angular-builders/custom-webpack:dev-server",
 					"options": {
 						"browserTarget": "gauzy:build",
 						"proxyConfig": "apps/gauzy/proxy.conf.json"
@@ -293,7 +295,7 @@
 			"prefix": "gauzy",
 			"architect": {
 				"build": {
-					"builder": "./apps/gauzy/node_modules/@angular-builders/custom-webpack:browser",
+					"builder": "./packages/core-angular/node_modules/@angular-builders/custom-webpack:browser",
 					"options": {
 						"customWebpackConfig": {
 							"path": "apps/gauzy/config/custom-webpack.config.js"
@@ -304,7 +306,9 @@
 						"polyfills": "apps/gauzy/src/polyfills.ts",
 						"tsConfig": "apps/gauzy/tsconfig.app.json",
 						"stylePreprocessorOptions": {
-							"includePaths": ["apps/gauzy/src/app/@theme/styles"]
+							"includePaths": [
+								"packages/core-angular/src/@theme/styles"
+							]
 						},
 						"assets": [
 							"apps/gauzy/src/favicon.ico",
@@ -326,9 +330,9 @@
 							"node_modules/@fortawesome/fontawesome-free/css/all.css",
 							"node_modules/socicon/css/socicon.css",
 							"node_modules/nebular-icons/scss/nebular-icons.scss",
-							"apps/gauzy/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
+							"packages/core-angular/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
 							"node_modules/leaflet/dist/leaflet.css",
-							"apps/gauzy/src/app/@theme/styles/styles.scss"
+							"packages/core-angular/src/@theme/styles/styles.scss"
 						],
 						"scripts": [
 							"node_modules/echarts/dist/echarts.min.js",
@@ -340,8 +344,8 @@
 						"production": {
 							"fileReplacements": [
 								{
-									"replace": "apps/gauzy/src/environments/environment.ts",
-									"with": "apps/gauzy/src/environments/environment.prod.ts"
+									"replace": "packages/core-angular/src/environments/environment.ts",
+									"with": "packages/core-angular/src/environments/environment.prod.ts"
 								}
 							],
 							"optimization": true,
@@ -427,7 +431,7 @@
 			"prefix": "gauzy",
 			"architect": {
 				"build": {
-					"builder": "./apps/gauzy/node_modules/@angular-builders/custom-webpack:browser",
+					"builder": "./packages/core-angular/node_modules/@angular-builders/custom-webpack:browser",
 					"options": {
 						"customWebpackConfig": {
 							"path": "apps/gauzy/config/custom-webpack.config.js"
@@ -451,7 +455,7 @@
 							"node_modules/@fortawesome/fontawesome-free/css/all.css",
 							"node_modules/socicon/css/socicon.css",
 							"node_modules/nebular-icons/scss/nebular-icons.scss",
-							"apps/gauzy/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
+							"packages/core-angular/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
 							"node_modules/leaflet/dist/leaflet.css",
 							"apps/desktop/src/assets/styles/styles.scss"
 						],
@@ -694,7 +698,7 @@
 			"prefix": "gauzy",
 			"architect": {
 				"build": {
-					"builder": "./apps/gauzy/node_modules/@angular-builders/custom-webpack:browser",
+					"builder": "./packages/core-angular/node_modules/@angular-builders/custom-webpack:browser",
 					"options": {
 						"customWebpackConfig": {
 							"path": "apps/gauzy/config/custom-webpack.config.js"
@@ -724,7 +728,7 @@
 							"node_modules/@fortawesome/fontawesome-free/css/all.css",
 							"node_modules/socicon/css/socicon.css",
 							"node_modules/nebular-icons/scss/nebular-icons.scss",
-							"apps/gauzy/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
+							"packages/core-angular/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
 							"node_modules/leaflet/dist/leaflet.css",
 							"apps/desktop-timer/src/assets/styles/styles.scss"
 						],
@@ -738,8 +742,8 @@
 									"with": "apps/desktop-timer/src/environments/environment.prod.ts"
 								},
 								{
-									"replace": "apps/gauzy/src/environments/environment.ts",
-									"with": "apps/gauzy/src/environments/environment.prod.ts"
+									"replace": "packages/core-angular/src/environments/environment.ts",
+									"with": "packages/core-angular/src/environments/environment.prod.ts"
 								}
 							],
 							"optimization": true,

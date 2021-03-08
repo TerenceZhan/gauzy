@@ -1,0 +1,6 @@
+.gitignore
+yarn-error.log
+e2e
+dist
+*.spec.ts
+/src
