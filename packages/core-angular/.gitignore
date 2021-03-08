@@ -9,3 +9,7 @@
 # misc
 npm-debug.log
 yarn-error.log
+
+# environments
+src/environments/environment.prod.ts
+src/environments/environment.ts

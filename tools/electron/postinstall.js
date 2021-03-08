@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const f_angular =
-	'apps/gauzy/node_modules/@angular-devkit/build-angular/src/webpack/configs/browser.js';
+	'packages/core-angular/node_modules/@angular-devkit/build-angular/src/webpack/configs/browser.js';
 
 fs.readFile(f_angular, 'utf8', function (err, data) {
 	if (err) {
