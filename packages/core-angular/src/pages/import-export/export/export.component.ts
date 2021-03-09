@@ -107,7 +107,7 @@ export class ExportComponent
 				this.selectedEntities,
 				(checkbox: IEntityModel) => checkbox.checked
 			),
-			(checkbox, i) => {
+			(checkbox: any, i) => {
 				return checkbox.value;
 			}
 		);
