@@ -21,11 +21,9 @@
 		"access": "restricted"
 	},
 	"scripts": {
-		"build": "rimraf dist && yarn run compile",
-		"compile": "tsc -p tsconfig.build.json",
-		"postbuild": "yarn run copy-files",
-		"postinstall": "ngcc --properties es2016 browser module main --first-only --create-ivy-entry-points",
-		"copy-files": "copyfiles -u 1 src/**/**/*.scss src/**/**/*.css dist/"
+		"ng": "ng",
+		"start": "yarn run postinstall.web && ng serve gauzy",
+		"postinstall.web": "yarn ngcc --properties es2016 browser module main --first-only --create-ivy-entry-points"
 	},
 	"resolutions": {
 		"uglify-js": "npm:terser",
@@ -57,9 +55,9 @@
 		"@datorama/akita": "^5.3.0",
 		"@datorama/akita-ngdevtools": "^5.0.3",
 		"@fortawesome/fontawesome-free": "^5.15.2",
+		"@nebular/auth": "^7.0.0",
 		"@nebular/bootstrap": "^7.0.0",
 		"@nebular/eva-icons": "^7.0.0",
-		"@nebular/auth": "^7.0.0",
 		"@nebular/security": "^7.0.0",
 		"@nebular/theme": "^7.0.0",
 		"@ng-select/ng-select": "6.1.0",
@@ -83,6 +81,7 @@
 		"classlist.js": "^1.1.20150312",
 		"cloudinary-core": "^2.11.3",
 		"core-js": "^3.8.3",
+		"cross-env": "^7.0.3",
 		"d3": "^6.5.0",
 		"d3-selection-multi": "^1.0.1",
 		"date-fns": "^2.16.1",

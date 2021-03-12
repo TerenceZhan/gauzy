@@ -1,0 +1,134 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"cli": {
+		"warnings": {
+			"typescriptMismatch": false,
+			"versionMismatch": false
+		},
+		"packageManager": "yarn",
+		"analytics": false
+	},
+	"version": 1,
+	"newProjectRoot": "",
+	"projects": {
+		"gauzy": {
+			"root": "",
+			"sourceRoot": "src",
+			"projectType": "application",
+			"prefix": "gauzy",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"aot": true,
+						"outputPath": "dist",
+						"index": "src/index.html",
+						"main": "src/main.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "tsconfig.app.json",
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/app/@theme/styles"]
+						},
+						"assets": [
+							"src/favicon.ico",
+							"src/assets",
+							"src/manifest.json",
+							"src/silent-refresh.html"
+						],
+						"styles": [
+							"node_modules/@nebular/theme/styles/prebuilt/default.css",
+							"../../node_modules/bootstrap/dist/css/bootstrap.css",
+							"../../node_modules/typeface-exo/index.css",
+							"../../node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
+							"../../node_modules/ionicons/dist/scss/ionicons.scss",
+							"../../node_modules/@fortawesome/fontawesome-free/css/all.css",
+							"../../node_modules/socicon/css/socicon.css",
+							"../../node_modules/nebular-icons/scss/nebular-icons.scss",
+							"../../node_modules/leaflet/dist/leaflet.css",
+							"node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
+							"src/app/@theme/styles/styles.scss"
+						],
+						"scripts": [
+							"../../node_modules/echarts/dist/echarts.min.js",
+							"../../node_modules/echarts/dist/extension/bmap.min.js",
+							"../../node_modules/chart.js/dist/Chart.min.js"
+						],
+						"allowedCommonJsDependencies": ["lodash"]
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"serviceWorker": false,
+							"sourceMap": false,
+							"namedChunks": false,
+							"showCircularDependencies": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"statsJson": false,
+							"progress": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "10mb",
+									"maximumError": "40mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "100kb",
+									"maximumError": "1mb"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "gauzy:build",
+						"proxyConfig": "proxy.conf.json"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "gauzy:build:production",
+							"proxyConfig": "proxy.prod.conf.json"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "gauzy:build"
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": ["tsconfig.app.json", "tsconfig.spec.json"],
+						"exclude": ["**/node_modules/**"]
+					}
+				}
+			}
+		}
+	},
+	"schematics": {
+		"@schematics/angular:component": {
+			"skipTests": true,
+			"changeDetection": "OnPush"
+		}
+	},
+	"defaultProject": "gauzy"
+}

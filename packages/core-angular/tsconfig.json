@@ -1,14 +1,9 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"declaration": true,
-		"sourceMap": true,
-		"baseUrl": "./src",
-		"rootDir": "./src",
-		"outDir": "./dist",
 		"types": ["node", "jest", "googlemaps"],
 		"target": "es2016",
 		"downlevelIteration": true
 	},
-	"include": ["./src/**/*"]
+	"include": ["**/*.ts"]
 }

@@ -37,7 +37,7 @@
 						"tsConfig": "apps/gauzy/tsconfig.app.json",
 						"stylePreprocessorOptions": {
 							"includePaths": [
-								"packages/core-angular/src/@theme/styles"
+								"packages/core-angular/src/app/@theme/styles"
 							]
 						},
 						"assets": [
@@ -57,7 +57,7 @@
 							"node_modules/nebular-icons/scss/nebular-icons.scss",
 							"packages/core-angular/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
 							"node_modules/leaflet/dist/leaflet.css",
-							"packages/core-angular/src/@theme/styles/styles.scss"
+							"packages/core-angular/src/app/@theme/styles/styles.scss"
 						],
 						"scripts": [
 							"node_modules/echarts/dist/echarts.min.js",
@@ -105,12 +105,12 @@
 					"builder": "./packages/core-angular/node_modules/@angular-builders/custom-webpack:dev-server",
 					"options": {
 						"browserTarget": "gauzy:build",
-						"proxyConfig": "apps/gauzy/proxy.conf.json"
+						"proxyConfig": "packages/core-angular/proxy.conf.json"
 					},
 					"configurations": {
 						"production": {
 							"browserTarget": "gauzy:build:production",
-							"proxyConfig": "apps/gauzy/proxy.prod.conf.json"
+							"proxyConfig": "packages/core-angular/proxy.prod.conf.json"
 						}
 					}
 				},
@@ -307,7 +307,7 @@
 						"tsConfig": "apps/gauzy/tsconfig.app.json",
 						"stylePreprocessorOptions": {
 							"includePaths": [
-								"packages/core-angular/src/@theme/styles"
+								"packages/core-angular/src/app/@theme/styles"
 							]
 						},
 						"assets": [
@@ -332,7 +332,7 @@
 							"node_modules/nebular-icons/scss/nebular-icons.scss",
 							"packages/core-angular/node_modules/@circlon/angular-tree-component/css/angular-tree-component.css",
 							"node_modules/leaflet/dist/leaflet.css",
-							"packages/core-angular/src/@theme/styles/styles.scss"
+							"packages/core-angular/src/app/@theme/styles/styles.scss"
 						],
 						"scripts": [
 							"node_modules/echarts/dist/echarts.min.js",
@@ -372,12 +372,12 @@
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"options": {
 						"browserTarget": "desktop:build",
-						"proxyConfig": "apps/gauzy/proxy.conf.json"
+						"proxyConfig": "packages/core-angular/proxy.conf.json"
 					},
 					"configurations": {
 						"production": {
 							"browserTarget": "desktop:build:production",
-							"proxyConfig": "apps/gauzy/proxy.prod.conf.json"
+							"proxyConfig": "packages/core-angular/proxy.prod.conf.json"
 						}
 					}
 				}
