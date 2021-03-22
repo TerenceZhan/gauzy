@@ -177,13 +177,13 @@ if (environment.SENTRY_DSN) {
 			deps: [ServerConnectionService, Store, Router],
 			multi: true
 		},
-		GoogleMapsLoaderService,
-		{
-			provide: APP_INITIALIZER,
-			useFactory: googleMapsLoaderFactory,
-			deps: [GoogleMapsLoaderService],
-			multi: true
-		},
+		// GoogleMapsLoaderService,
+		// {
+		// 	provide: APP_INITIALIZER,
+		// 	useFactory: googleMapsLoaderFactory,
+		// 	deps: [GoogleMapsLoaderService],
+		// 	multi: true
+		// },
 		FeatureService,
 		{
 			provide: APP_INITIALIZER,
